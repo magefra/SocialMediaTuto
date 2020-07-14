@@ -1,5 +1,5 @@
 # SocialMediaTuto
-
+Proyecto de un tutorial.
 
 
 # Librerías.
@@ -11,16 +11,13 @@
 * Visual studio 2019 / Visual Studio Code
 * Microsoft .NET Core 3.1
 
+
 ## Comenzando 🚀
 El proyecto utiliza la arquictectura DDD.
 
-* Application
+* API
 * Core
 * Infrastructure
-* Presentacion
-
-
-
 
 
 ## Autor ✒️
