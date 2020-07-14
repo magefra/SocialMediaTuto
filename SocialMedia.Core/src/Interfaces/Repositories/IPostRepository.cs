@@ -27,5 +27,21 @@ namespace SocialMedia.Core.src.Interfaces.Repositories
         /// <param name="post"></param>
         /// <returns></returns>
         Task add(Post post);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
+        Task<bool> Update(Post post);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<bool> Delete(int id);
     }
 }

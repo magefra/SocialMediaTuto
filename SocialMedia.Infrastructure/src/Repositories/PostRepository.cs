@@ -2,9 +2,7 @@
 using SocialMedia.Core.src.Entities;
 using SocialMedia.Core.src.Interfaces.Repositories;
 using SocialMedia.Infrastructure.src.Data;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SocialMedia.Infrastructure.src.Repositories
@@ -17,6 +15,7 @@ namespace SocialMedia.Infrastructure.src.Repositories
         private readonly SocialMediaContext _socialMediaContext;
 
 
+    
         public PostRepository(SocialMediaContext socialMediaContext)
         {
             _socialMediaContext = socialMediaContext;
@@ -56,6 +55,47 @@ namespace SocialMedia.Infrastructure.src.Repositories
         {
            await _socialMediaContext.Posts.AddAsync(post);
            await _socialMediaContext.SaveChangesAsync();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
+        public async Task<bool> Update(Post post)
+        {
+            var resultPost = await getId(post.Id);
+
+            resultPost.Date = post.Date;
+            resultPost.Description = post.Description;
+            resultPost.Image = post.Image;
+
+
+
+           int rows =  await _socialMediaContext.SaveChangesAsync();
+
+
+            return rows > 0;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<bool> Delete(int id)
+        {
+            var resultPost = await getId(id);
+
+            _socialMediaContext.Posts.Remove(resultPost);
+
+
+            int rows = await _socialMediaContext.SaveChangesAsync();
+
+
+            return rows > 0;
         }
     }
 }
