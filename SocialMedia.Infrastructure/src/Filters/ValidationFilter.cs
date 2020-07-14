@@ -6,6 +6,7 @@ namespace SocialMedia.Infrastructure.src.Filters
 {
     public class ValidationFilter : IAsyncActionFilter
     {
+
         /// <summary>
         /// 
         /// </summary>
