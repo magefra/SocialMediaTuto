@@ -40,7 +40,7 @@ namespace SocialMedia.Infrastructure.src.Repositories
         /// <returns></returns>
         public async Task<Post> getId(int id)
         {
-            var post = await _socialMediaContext.Posts.FirstOrDefaultAsync(x => x.UserId == id);
+            var post = await _socialMediaContext.Posts.FirstOrDefaultAsync(x => x.Id == id);
             return post;
         }
 

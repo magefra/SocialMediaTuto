@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="src\Exceptions\" />
+    <Folder Include="src\Interfaces\UniOfWork\" />
   </ItemGroup>
 
 </Project>

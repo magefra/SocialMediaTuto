@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SocialMedia.Core.src.Interfaces.Repositories;
+using SocialMedia.Core.src.Interfaces.Services;
+using SocialMedia.Core.src.Services;
 using SocialMedia.Infrastructure.src.Data;
 using SocialMedia.Infrastructure.src.Filters;
 using SocialMedia.Infrastructure.src.Repositories;
@@ -49,6 +51,9 @@ namespace SocialMedia.Api
             );
 
             services.AddTransient<IPostRepository, PostRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IPostService, PostService>();
+            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
 
 
             services.AddMvc(options =>
