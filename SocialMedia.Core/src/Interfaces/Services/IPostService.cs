@@ -1,4 +1,5 @@
 ﻿using SocialMedia.Core.src.Entities;
+using SocialMedia.Core.src.QueryFilters;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace SocialMedia.Core.src.Interfaces.Services
         /// 
         /// </summary>
         /// <returns></returns>
-        IEnumerable<Post> Get();
+        IEnumerable<Post> Get(PostQueryFilter postQueryFilter);
 
 
         /// <summary>

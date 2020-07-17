@@ -11,8 +11,6 @@ namespace SocialMedia.Infrastructure.src.Repositories
     public class PostRepository : BaseRepository<Post>, IPostRepository
     {
 
-
-
         public PostRepository(SocialMediaContext socialMediaContext) : base(socialMediaContext)
         {
         }
@@ -28,6 +26,9 @@ namespace SocialMedia.Infrastructure.src.Repositories
         {
             return await _entities.Where(x => x.UserId == userId).ToListAsync();
         }
+
+
+
 
     }
 }
