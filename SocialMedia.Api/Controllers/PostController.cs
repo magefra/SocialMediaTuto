@@ -6,6 +6,7 @@ using SocialMedia.Core.src.Entities;
 using SocialMedia.Core.src.Interfaces.Services;
 using SocialMedia.Core.src.QueryFilters;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace SocialMedia.Api.Controllers
@@ -37,6 +38,8 @@ namespace SocialMedia.Api.Controllers
 
 
         [HttpGet]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int) HttpStatusCode.BadRequest)]
         public IActionResult Get([FromQuery] PostQueryFilter filters)
         {
             var post =  _postService.Get(filters);
