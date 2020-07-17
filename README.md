@@ -12,6 +12,12 @@ Proyecto de un tutorial.
 * Microsoft .NET Core 3.1
 
 
+## Skils
+* Crud Operations with EF Core 
+* Business Logic and Repository Pattern
+* Filtering Data and Return Types
+* Custom Exceptions
+
 ## Comenzando 🚀
 El proyecto utiliza la arquictectura DDD.
 
