@@ -4,6 +4,7 @@ using SocialMedia.Core.src.Interfaces.Repositories;
 using SocialMedia.Infrastructure.src.Data;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +22,7 @@ namespace SocialMedia.Infrastructure.src.Repositories
         /// <summary>
         /// 
         /// </summary>
-        private DbSet<T> _entities;
+        protected DbSet<T> _entities;
 
 
 
@@ -40,8 +41,7 @@ namespace SocialMedia.Infrastructure.src.Repositories
         /// <returns></returns>
         public async Task Add(T entity)
         {
-            _entities.Add(entity);
-           await _socialMediaContext.SaveChangesAsync();
+          await  _entities.AddAsync(entity);
         }
 
 
@@ -54,7 +54,6 @@ namespace SocialMedia.Infrastructure.src.Repositories
         {
             T entity = await GetById(id);
             _entities.Remove(entity);
-           await _socialMediaContext.SaveChangesAsync();
             
         }
 
@@ -63,9 +62,9 @@ namespace SocialMedia.Infrastructure.src.Repositories
         /// 
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<T>> GetAll()
+        public IEnumerable<T> GetAll()
         {
-            return await _entities.ToListAsync();
+            return  _entities.AsEnumerable();
         }
 
 
@@ -86,10 +85,9 @@ namespace SocialMedia.Infrastructure.src.Repositories
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task Update(T entity)
+        public void Update(T entity)
         {
             _entities.Update(entity);
-            await _socialMediaContext.SaveChangesAsync();
         }
     }
 }

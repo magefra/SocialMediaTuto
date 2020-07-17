@@ -11,7 +11,7 @@ namespace SocialMedia.Core.src.Interfaces.Services
         /// 
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Post>> Get();
+        IEnumerable<Post> Get();
 
 
         /// <summary>

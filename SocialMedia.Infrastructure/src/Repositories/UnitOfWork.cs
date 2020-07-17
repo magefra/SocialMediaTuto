@@ -18,7 +18,7 @@ namespace SocialMedia.Infrastructure.src.Repositories
         /// <summary>
         /// 
         /// </summary>
-        private readonly IRepository<Post> _postRepository;
+        private readonly IPostRepository _postRepository;
 
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace SocialMedia.Infrastructure.src.Repositories
         /// <summary>
         /// 
         /// </summary>
-        public IRepository<Post> PostRepository => _postRepository ?? new BaseRepository<Post>(_socialMediaContext);
+        public IPostRepository PostRepository => _postRepository ?? new PostRepository(_socialMediaContext);
 
         /// <summary>
         /// 
@@ -81,6 +81,11 @@ namespace SocialMedia.Infrastructure.src.Repositories
             _socialMediaContext.SaveChanges();
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public async Task SaveChangesAsync()
         {
             await _socialMediaContext.SaveChangesAsync();

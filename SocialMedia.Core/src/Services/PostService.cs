@@ -1,10 +1,10 @@
 ﻿using SocialMedia.Core.src.Entities;
-using SocialMedia.Core.src.Interfaces.Repositories;
+using SocialMedia.Core.src.Exceptions;
 using SocialMedia.Core.src.Interfaces.Services;
 using SocialMedia.Core.src.Interfaces.UniOfWork;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SocialMedia.Core.src.Services
@@ -19,10 +19,13 @@ namespace SocialMedia.Core.src.Services
 
 
 
+
         public PostService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
+
+
 
 
 
@@ -37,10 +40,30 @@ namespace SocialMedia.Core.src.Services
 
             if (user == null)
             {
-                throw new Exception("El usuario no éxiste");
+                throw new BusinessException("El usuario no éxiste");
             }
 
+            var userPost = await _unitOfWork.PostRepository.GetByUserAsync(post.UserId);
+
+
+            if(userPost.Count() < 100)
+            {
+                //Obtener el ultimo Post.
+                var lastPost = userPost.OrderByDescending(x => x.Date).LastOrDefault();
+
+
+                if ((lastPost.Date - DateTime.Now).TotalDays < 7)
+                {
+                    throw new BusinessException("No puedes publicar una publicación");
+                }
+            }
+
+
+            //Faltaría otra validación
+
+
             await _unitOfWork.PostRepository.Add(post);
+            await _unitOfWork.SaveChangesAsync();
         }
 
         /// <summary>
@@ -48,9 +71,10 @@ namespace SocialMedia.Core.src.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async  Task<bool> Delete(int id)
+        public async Task<bool> Delete(int id)
         {
-          await _unitOfWork.PostRepository.Delete(id);
+            await _unitOfWork.PostRepository.Delete(id);
+            await _unitOfWork.SaveChangesAsync();
             return true;
         }
 
@@ -59,9 +83,10 @@ namespace SocialMedia.Core.src.Services
         /// 
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<Post>> Get()
+        public IEnumerable<Post> Get()
         {
-            return await _unitOfWork.PostRepository.GetAll();
+            return _unitOfWork.PostRepository.GetAll();
+
         }
 
 
@@ -72,7 +97,7 @@ namespace SocialMedia.Core.src.Services
         /// <returns></returns>
         public async Task<Post> getId(int id)
         {
-            return  await _unitOfWork.PostRepository.GetById(id);
+            return await _unitOfWork.PostRepository.GetById(id);
         }
 
 
@@ -83,7 +108,8 @@ namespace SocialMedia.Core.src.Services
         /// <returns></returns>
         public async Task<bool> Update(Post post)
         {
-           await _unitOfWork.PostRepository.Update(post);
+            _unitOfWork.PostRepository.Update(post);
+            await _unitOfWork.SaveChangesAsync();
             return true;
         }
     }

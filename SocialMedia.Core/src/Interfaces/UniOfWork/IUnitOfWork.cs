@@ -11,7 +11,7 @@ namespace SocialMedia.Core.src.Interfaces.UniOfWork
         /// <summary>
         /// 
         /// </summary>
-        IRepository<Post> PostRepository { get;  }
+        IPostRepository PostRepository { get;  }
 
 
         /// <summary>

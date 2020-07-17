@@ -13,7 +13,7 @@ namespace SocialMedia.Core.src.Interfaces.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<IEnumerable<T>> GetAll();
+        IEnumerable<T> GetAll();
 
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace SocialMedia.Core.src.Interfaces.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task Update(T entity);
+        void Update(T entity);
 
 
 
