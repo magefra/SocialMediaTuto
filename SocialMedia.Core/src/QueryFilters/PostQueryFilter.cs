@@ -9,5 +9,12 @@ namespace SocialMedia.Core.src.QueryFilters
         public DateTime? Date { get; set; }
 
         public String Description { get; set; }
+
+        public int PageSize { get; set; }
+
+        public int PageNumer { get; set; }
+
+
+
     }
 }

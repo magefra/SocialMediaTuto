@@ -1,10 +1,10 @@
-﻿using SocialMedia.Core.src.Entities;
+﻿using SocialMedia.Core.src.CustomEntities;
+using SocialMedia.Core.src.Entities;
 using SocialMedia.Core.src.Exceptions;
 using SocialMedia.Core.src.Interfaces.Services;
 using SocialMedia.Core.src.Interfaces.UniOfWork;
 using SocialMedia.Core.src.QueryFilters;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -84,7 +84,7 @@ namespace SocialMedia.Core.src.Services
         /// 
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Post> Get(PostQueryFilter filters)
+        public PageList<Post> Get(PostQueryFilter filters)
         {
 
             var post = _unitOfWork.PostRepository.GetAll(); 
@@ -106,7 +106,11 @@ namespace SocialMedia.Core.src.Services
                     x => x.Description.ToLower() == filters.Description.ToLower());
             }
 
-            return post;
+
+            var pagePost = PageList<Post>.Create(post, filters.PageNumer, filters.PageSize);
+
+
+            return pagePost;
 
         }
 

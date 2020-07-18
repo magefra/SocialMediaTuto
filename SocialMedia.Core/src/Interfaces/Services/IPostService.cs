@@ -1,18 +1,18 @@
-﻿using SocialMedia.Core.src.Entities;
+﻿using SocialMedia.Core.src.CustomEntities;
+using SocialMedia.Core.src.Entities;
 using SocialMedia.Core.src.QueryFilters;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SocialMedia.Core.src.Interfaces.Services
 {
     public interface IPostService
     {
-        
+
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        IEnumerable<Post> Get(PostQueryFilter postQueryFilter);
+        PageList<Post> Get(PostQueryFilter postQueryFilter);
 
 
         /// <summary>
