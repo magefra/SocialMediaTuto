@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SocialMedia.Api</name>
+    </assembly>
+    <members>
+        <member name="F:SocialMedia.Api.Controllers.PostController._postService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SocialMedia.Api.Controllers.PostController._mapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SocialMedia.Api.Controllers.PostController._uriService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SocialMedia.Api.Controllers.PostController.Get(SocialMedia.Core.src.QueryFilters.PostQueryFilter)">
+            <summary>
+            Regresa todos las publicaciones.
+            </summary>
+            <param name="filters">Filtros a aplicar.</param>
+            <returns></returns>
+        </member>
+        <member name="P:SocialMedia.Api.Responses.ApiResponse`1.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SocialMedia.Api.Responses.ApiResponse`1.Metadata">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

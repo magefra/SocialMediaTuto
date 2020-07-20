@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SocialMedia.Core.src.DTOs
 {
     public class PostDto
     {
+        /// <summary>
+        /// Id Autoincremental.
+        /// </summary>
         public int PostId { get; set; }
         public int UserId { get; set; }
         public DateTime? Date { get; set; }

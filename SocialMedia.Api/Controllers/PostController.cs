@@ -14,10 +14,12 @@ using System.Threading.Tasks;
 
 namespace SocialMedia.Api.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class PostController : ControllerBase
     {
+
         /// <summary>
         /// 
         /// </summary>
@@ -36,8 +38,6 @@ namespace SocialMedia.Api.Controllers
         private readonly IUriService _uriService;
 
 
-
-
         public PostController(IPostService postService,
                               IMapper mapper,
                               IUriService uriService)
@@ -48,9 +48,13 @@ namespace SocialMedia.Api.Controllers
         }
 
 
-
+        /// <summary>
+        /// Regresa todos las publicaciones.
+        /// </summary>
+        /// <param name="filters">Filtros a aplicar.</param>
+        /// <returns></returns>
         [HttpGet(Name = nameof(Get))]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse<IEnumerable<PostDto>>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public IActionResult Get([FromQuery] PostQueryFilter filters)
         {
@@ -129,8 +133,5 @@ namespace SocialMedia.Api.Controllers
 
             return Ok(response);
         }
-
-
-
     }
 }
