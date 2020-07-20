@@ -26,6 +26,19 @@
             <param name="filters">Filtros a aplicar.</param>
             <returns></returns>
         </member>
+        <member name="M:SocialMedia.Api.Controllers.TokenController.IsValidUser(SocialMedia.Core.src.Entities.UserLogin)">
+            <summary>
+            
+            </summary>
+            <param name="userLogin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialMedia.Api.Controllers.TokenController.GenerateToken">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="P:SocialMedia.Api.Responses.ApiResponse`1.Data">
             <summary>
             
