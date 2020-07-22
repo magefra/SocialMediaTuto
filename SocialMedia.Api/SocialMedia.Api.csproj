@@ -8,6 +8,8 @@
     <GenerateDocumentacionFile>true</GenerateDocumentacionFile>
     <NoWarn> ${NoWarn};1591 </NoWarn>
     <LangVersion>preview</LangVersion>
+    <OutputType>Exe</OutputType>
+    <UserSecretsId>cf5e8d3a-3af4-4662-b137-51d7a65abeec</UserSecretsId>
   </PropertyGroup>
   
   
@@ -29,6 +31,12 @@
   <ItemGroup>
     <ProjectReference Include="..\SocialMedia.Core\SocialMedia.Core.csproj" />
     <ProjectReference Include="..\SocialMedia.Infrastructure\SocialMedia.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SocialMedia.Api.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 

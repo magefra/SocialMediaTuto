@@ -24,8 +24,4 @@
     <ProjectReference Include="..\SocialMedia.Core\SocialMedia.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
-  </ItemGroup>
-
 </Project>

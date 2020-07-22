@@ -148,7 +148,7 @@ namespace SocialMedia.Api
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Social Media API V1");
-                options.RoutePrefix = string.Empty;
+                //options.RoutePrefix = string.Empty;
             });
 
             app.UseRouting();
