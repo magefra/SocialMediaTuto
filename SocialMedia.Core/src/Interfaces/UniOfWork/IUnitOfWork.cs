@@ -31,6 +31,13 @@ namespace SocialMedia.Core.src.Interfaces.UniOfWork
         /// <summary>
         /// 
         /// </summary>
+        ISecurityRepository SecurityRepository { get; }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
         void SaveChanges();
 
 

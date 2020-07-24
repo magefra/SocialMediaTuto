@@ -9,6 +9,8 @@ namespace SocialMedia.Infrastructure.src.Mappings
         public AutoMapperProfile()
         {
             CreateMap<Post, PostDto>().ReverseMap();
+
+            CreateMap<Security, SecurityDto>().ReverseMap();
         }
     }
 }

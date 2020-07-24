@@ -33,6 +33,12 @@ namespace SocialMedia.Infrastructure.src.Repositories
         private readonly IRepository<Comment> _commentRepository;
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        private readonly ISecurityRepository _securityRepository;
+
+
 
 
         public UnitOfWork(SocialMediaContext socialMediaContext)
@@ -47,16 +53,26 @@ namespace SocialMedia.Infrastructure.src.Repositories
         /// </summary>
         public IPostRepository PostRepository => _postRepository ?? new PostRepository(_socialMediaContext);
 
+
+
         /// <summary>
         /// 
         /// </summary>
         public IRepository<User> UserRepository => _userRepository ?? new BaseRepository<User>(_socialMediaContext);
 
 
+
         /// <summary>
         /// 
         /// </summary>
         public IRepository<Comment> CommentRepository => _commentRepository ?? new BaseRepository<Comment>(_socialMediaContext);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ISecurityRepository SecurityRepository => _securityRepository ?? new SecurityRepository(_socialMediaContext);
 
 
 

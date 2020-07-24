@@ -26,6 +26,31 @@
             <param name="filters">Filtros a aplicar.</param>
             <returns></returns>
         </member>
+        <member name="F:SocialMedia.Api.Controllers.SecurityController._securityService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SocialMedia.Api.Controllers.SecurityController._mapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SocialMedia.Api.Controllers.SecurityController._uriService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SocialMedia.Api.Controllers.TokenController._configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SocialMedia.Api.Controllers.TokenController._securityService">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:SocialMedia.Api.Controllers.TokenController.IsValidUser(SocialMedia.Core.src.Entities.UserLogin)">
             <summary>
             
@@ -33,7 +58,7 @@
             <param name="userLogin"></param>
             <returns></returns>
         </member>
-        <member name="M:SocialMedia.Api.Controllers.TokenController.GenerateToken">
+        <member name="M:SocialMedia.Api.Controllers.TokenController.GenerateToken(SocialMedia.Core.src.Entities.Security)">
             <summary>
             
             </summary>
