@@ -13,10 +13,12 @@ Proyecto de un tutorial.
 
 
 ## Caracteristicas.
-* Crud Operations with EF Core 
-* Business Logic and Repository Pattern
-* Filtering Data and Return Types
-* Custom Exceptions
+* Onion Archicecture.
+* Entity Framework Core
+* .Net core 3.1
+* Swagger
+* CRUD
+* Security(JWT)
 
 ## Comenzando 🚀
 El proyecto utiliza la arquictectura DDD.
