@@ -17,8 +17,11 @@ Proyecto de un tutorial.
 * Entity Framework Core
 * .Net core 3.1
 * Swagger
+* Repository Pattern - Generic
 * CRUD
-* Security(JWT)
+* Microsoft Identity with JWT Authentication
+* Complete User Management Module (Register / Generate Token / Forgot Password / Confirmation Mail)
+
 
 ## Comenzando 🚀
 El proyecto utiliza la arquictectura DDD.
